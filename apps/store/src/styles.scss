@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/my-theme.scss';
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../../node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss";
+@import "../../../node_modules/angular-bootstrap-md/assets/scss/mdb.scss";
+@import "../../../node_modules/animate.css/animate.css";

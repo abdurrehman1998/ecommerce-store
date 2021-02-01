@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ecommerce/material": ["libs/material/src/index.ts"],
+      "@ecommerce/bootstrap": ["libs/bootstrap/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

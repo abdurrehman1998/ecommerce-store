@@ -1,0 +1,112 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Ecommerce Store</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Home</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <span>Ecommerce Store</span> -->
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <div class="splide">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      src="assets/images/barrett-ward-cOJgO4Zzs-w-unsplash.jpg"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      src="assets/images/bastian-ignacio-vega-cani-Cbh93NpfWeg-unsplash.jpg"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      src="assets/images/fachry-zella-devandra-KvRy5S8hKPw-unsplash.jpg"
+                    />
+                  </li>
+
+                  <li class="splide__slide">
+                    <img
+                      src="assets/images/imani-bahati-LxVxPA1LOVM-unsplash.jpg"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      src="assets/images/malvestida-magazine-DMl5gG0yWWY-unsplash.jpg"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      src="assets/images/paul-volkmer-updW-QUccFE-unsplash.jpg"
+                    />
+                  </li>
+
+                  <li class="splide__slide">
+                    <img src="assets/images/revolt-164_6wVEHfI-unsplash.jpg" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex flex-row justify-content-start align-items-center mt-1"
+      >
+        <div style="width: 3%">
+          <mat-divider></mat-divider>
+        </div>
+        <div>
+          <span class="badge badge-custom"
+            ><strong class="mat-title">Best Selling</strong></span
+          >
+        </div>
+        <div class="flex-grow-1">
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="splide" id="bestSelling">
+            <div class="splide__track">
+              <div class="splide__list">
+                <div
+                  class="splide__slide"
+                  *ngFor="let product of bestSellingProducts"
+                >
+                  <ecommerce-product-thumbnail class="m-1"
+                    [imgSrc]="product"
+                  ></ecommerce-product-thumbnail>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
